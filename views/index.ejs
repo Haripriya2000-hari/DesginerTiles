@@ -1,0 +1,69 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheet/styles.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+
+
+
+    <title>Designer Tiles</title>
+</head>
+
+<body style="background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(/images/bacgkound\ 2.jpg);">
+
+    <!-- <div class="splash">
+        <h1 class="fade-in">Welcome to Designer Tiles</h1>
+    </div> -->
+    <div class="intro">
+        <h1 class="Logo-Header">
+            <span class="Logo">Designer </span><span class="Logo"> Tiles.</span>
+
+        </h1>
+    </div>
+    <!-- <header>
+        <h4>Logo</h4>
+    </header> -->
+
+    <div class="Login-Container">
+        <h1 class="title">Welcome to Designer Tiles</h1>
+
+        <form class="Register-form" id="register">
+            <input type="text" id="email" autocomplete="email" placeholder="Email id" /><br><br>
+            <input type="password" id="npassword" autocomplete="new-password" placeholder="Password" /><br><br>
+            <input type="password" id="conpassword" autocomplete="current-password" placeholder="Confirm Password" /><br><br>
+            <a href="#"><button type="button" class="btn-register" onclick="registervalidation()" id="registerbtn">Sign Up</button></a>
+            <p>Already Registered? <button class="btn btn-info" type="button" onclick="moveToLogin()">Login</button></p>
+            <hr class="dash">
+            <a href="#"><button type="button" class="Google_Login" onclick="googleLogin()" id="google btn" > <img class ="googlelogo" src="/images/google.png">                      Sign in With Google</button></a>
+        </form>
+
+
+        <form class="Login-form" id="login">
+            <input type="text" id="emailid" autocomplete="email" placeholder="Email id" /><br><br>
+            <input type="password" id="password" autocomplete="current-password" placeholder="Password" /><br><br>
+            <a href="#"><button type="button" class="btn-login" onclick="loginvalidation()" id="loginbtn">Sign In</button></a>
+            <p>Create your account on DesginerTiles.com <button class="btn btn-info" type="button" onclick="moveToregister()">Register</button></p>
+            <hr class="dash">
+            <a href="#"><button type="button" class="Google_Login" onclick="googleLogin()" id="google btn">  <img class ="googlelogo" src="/images/google.png">                      Sign in With Google</button></a>
+        </form>
+
+
+    </div>
+    <script src="/js/Login.js"></script>
+
+</body>
+
+</html>

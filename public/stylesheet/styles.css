@@ -1,0 +1,246 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/bacgkound\ 2.jpg);
+    background-size: cover;
+    height: 100vp;
+    background-position: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+}
+
+.header h4 {
+    position: absolute;
+    left: 10%;
+    bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+
+/* Splash Screen */
+
+.intro {
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #161616;
+    transition: 1s;
+}
+
+
+/* 
+#logo1 {
+    position: relative;
+    top: 50px;
+    left: 100px;
+} */
+
+.logo-header {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+}
+
+.logo {
+    font-family: 'Times New Roman', Times, serif;
+    color: purple;
+    font-size: 60px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.logo.active {
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+.logo.fade {
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
+
+
+/* .splash {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 250px;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    size: 40px;
+    background-image: url(Images/bacgkound\ 2.jpg);
+    z-index: 200;
+    align-items: center;
+    color: white;
+    line-height: 90vh;
+}
+
+.splash.display-none {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(Images/bacgkound\ 2.jpg);
+    z-index: -10;
+    color: white;
+    line-height: 90vh;
+    transition: all 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+} */
+
+.top {
+    background-color: purple;
+    width: fit-content;
+    height: 20px;
+}
+
+.title {
+    position: relative;
+    font-size: 40px;
+    padding: 30px;
+    font-family: serif;
+    font-weight: 700;
+}
+
+.Login-Container {
+    width: 600px;
+    padding-top: 20px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.Register-form {
+    /* background-color: rgb(100, 98, 98); */
+    text-align: center;
+    align-self: center;
+    display: none;
+    padding: 30px;
+    border-radius: 10px;
+    width: 65%;
+    margin: 0 auto;
+    color: black;
+    border: 3px solid white;
+}
+
+.Register-form input {
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 300px;
+    height: 40px;
+}
+
+.Register-form p {
+    padding: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.btn-register {
+    background-color: rgb(6, 179, 6);
+    border-radius: 10px;
+    color: black;
+    width: 300px;
+    height: 40px;
+}
+
+.btn-login {
+    padding: 10px;
+    background-color: rgb(6, 179, 6);
+    border-radius: 10px;
+    color: black;
+    width: 300px;
+    height: 40px;
+}
+
+.googlelogo {
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+
+.Google_Login {
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+    border-color: ghostwhite;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    width: 300px;
+    height: 40px;
+}
+
+.dash {
+    height: 2px;
+    border-width: 0;
+    color: gray;
+    background-color: white
+}
+
+.Login-form {
+    /* background-color: rgb(100, 98, 98); */
+    text-align: center;
+    align-self: center;
+    padding: 30px;
+    border-radius: 10px;
+    width: 65%;
+    color: black;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid white;
+}
+
+.Login-form input {
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 300px;
+    height: 40px;
+}
+
+.next {
+    color: black;
+}
+
+.Login-form p {
+    padding: 10px;
+    color: rgb(255, 255, 255);
+}

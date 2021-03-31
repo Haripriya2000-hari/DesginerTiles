@@ -1,0 +1,147 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-5.15.1-web/css/all.css">
+    <link rel="stylesheet" href="/stylesheet/TypeTilesstyles.css">
+    <link rel="stylesheet" href="/stylesheet/description.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="top">
+        <h1 class="title">Designer Tiles</h1>
+        <div class="nav">
+            <a id="accountinfo" onclick="locationchange()"><i class="fas fa-user" style="padding-right: 5px;"></i>Account Info</a>
+            <a id="wishlistlink" onclick="locationchange()"><i class="fas fa-heart" style="padding-right: 5px;"></i>Wishlist</a>
+            <a id="cartlink" onclick="locationchange()"><i class="fas fa-cart-plus" style="padding-right: 5px;"></i>Cart</a>
+            <a href="/TypeTile"><i class="fas fa-home" style="padding-right: 5px;"></i>Home</a>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="imagecontainer">
+            <img id="img" style="width: 700px; 
+            height: 470px; cursor: pointer;" src=<%=result[0].imageurl%> alt="">
+
+
+            <div class="images">
+                <img id='image1' onclick="imagechange('image1')" src=<%=result[0].imageurl%> alt="">
+                <img id='image2' onclick="imagechange('image2')" src=<%="/" +result[0].img2%> alt="">
+                <img id='image3' onclick="imagechange('image3')" src=<%="/" +result[0].img3%> alt="">
+                <img id='image4' onclick="imagechange('image4')" src=<%="/" +result[0].img4%> alt="">
+                <img id='image5' onclick="imagechange('image5')" src=<%="/" +result[0].img5%> alt=""></div>
+            <div class="description">
+                <h2 id="namee">
+                    <%=result[0].name%>
+                </h2>
+                <h3>Description: </h3>
+                <p id="des">
+                    <%=result[0].description%>
+                </p>
+                <h3 id="cost1">
+                    <%=result[0].cost1%>₹ /Sq.feet
+                </h3>
+                <h3>Piece: </h3>
+                <div class="calculationpart">
+                    <div class="forcal">
+                        <button onclick="adding()"><i class="fas fa-plus"></i></button>
+                        <p id="num">
+                            <%=result[0].peice%>
+                        </p>
+                        <button onclick="subtract()"><i class="fas fa-minus"></i></button>
+                    </div>
+                    <div class="calulcated">
+                        <p id="cost">
+                            <%=result[0].cost%>₹
+                        </p>
+
+                    </div>
+                    <!-- calculated is ending -->
+
+                </div>
+                <!-- calculation part ending -->
+                <div class="btns">
+                    <button id="cart" onclick="add()"><i class="fas fa-cart-plus" style="padding: 5px;"></i>Add to Cart </button>
+                    <button id="wishlist" onclick="wishlistadd()"><i class="fas fa-heart" style="padding: 5px;"></i>Add to Wishlist</button>
+
+                </div>
+                <p id="id" style="visibility: hidden;">
+                    <%=result[0].id%>
+                </p>
+
+                <p id="oldid" style="visibility: hidden;">
+                    <%=result[0].oldid%>
+                </p>
+                <button id="buying">Buy Now</button>
+
+            </div>
+            <!-- Description container ending -->
+
+        </div>
+        <!-- image container ending -->
+
+    </div>
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="form1" class="details" method="GET" onsubmit="return validate()">
+                <input type=" text" placeholder="First Name " id="fname" autocomplete="name "><br>
+                <label id="firname" style="color:red; visibility:hidden;">
+                Invalid First Name</label>
+                <input type="text" placeholder="last Name " id="lname" autocomplete="name "><br>
+                <label id="lirname" style="color:red;visibility:hidden;">
+                    Invalid Last Name</label>
+                <input type="text" placeholder="Location " id="location" autocomplete="name "><br>
+                <label id="locations" style="color:red;visibility:hidden;">
+                    Invalid Location</label>
+                <input type="text" placeholder="City " id="city" autocomplete="name "><br>
+                <label id="citys" style="color:red;visibility:hidden;">
+                    Invalid city</label>
+                <input type="text" placeholder="landmark " id="landmark" autocomplete="name "><br>
+                <label id="landmarks" style="color:red;visibility:hidden;">
+                    Invalid landmark</label>
+                <input type="number" placeholder="Pin Code " id="pincode" autocomplete="name "><br>
+                <label id="pincodes" style="color:red;visibility:hidden;">
+                    Invalid Pin Code</label>
+                <input type="number" placeholder="Phone no " id="Phoneno" autocomplete="name "><br>
+                <label id="phonenos" style="color:red;visibility:hidden;">
+                    Invalid phone no</label>
+
+                <input type="number" placeholder="Alternate Phone no " id="alphone" autocomplete="name "><br>
+                <label id="alphones" style="color:red;visibility:hidden;">
+                    Invalid alternate phone no</label><br>
+                <label id="equal" style="color:red;visibility:hidden;">
+                        Phone number and alternate phone number should not be same</label><br><br>
+                <button class="proceed">Proceed To Pay</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="container" onclick="myorders()">
+        <div class="fixed-action-bt">
+            <a class="btn-floating red">
+                <i style="font-size: 25px; color: white;" class="fas fa-shopping-bag"></i>
+            </a>
+
+        </div>
+
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-605976850f796a80"></script>
+
+</body>
+<script src="/js/desupdate.js"></script>
+<!-- <script defer src="/js/description.js "></script> -->
+
+</html>

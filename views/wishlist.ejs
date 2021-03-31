@@ -1,0 +1,95 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/fontawesome-free-5.15.1-web/css/all.css">
+    <link rel="stylesheet" href="/stylesheet/wishlist.css">
+    <link rel="stylesheet" href="/stylesheet/TypeTilesstyles.css">
+
+</head>
+
+<body>
+
+    <div class="top">
+        <h1 class="title">Designer Tiles</h1>
+        <div class="nav">
+            <a id="accountinfo" onclick="locationchange()"><i class="fas fa-user " style="padding-right: 5px; "></i>Account Info</a>
+            <a href="# "><i class="fas fa-heart " style="padding-right: 5px; "></i>Wishlist</a>
+            <a id="cartlink" onclick="locationchange()"><i class="fas fa-cart-plus " style="padding-right: 5px; "></i>Cart</a>
+            <a href="/TypeTile"><i class="fas fa-home " style="padding-right: 5px; "></i>Home</a>
+        </div>
+    </div>
+    <%var i = 1;
+    if(wishlistdatas.length==0){%>
+        <div class="nocontainer ">
+            <img src="/images/cart3.png " alt=" ">
+            <p>No Items in your Wishlist</p>
+
+        </div>
+        <%}else{%>
+            <div class="wrapper ">
+                <%wishlistdatas.forEach(function(data){
+                    var name = data.name.replace(/\s+/g,'')%>
+                    <div class="onewrapper" onclick=location.href="/whislistupdate/<%=data.id%>/<%=data.oldid%>/<%=name%>">
+                        <p class="onecartid " style="visibility: hidden; ">
+                            <%=data.id%>
+                        </p>
+                        <div class="image ">
+                            <img style="width: 80px; height: 80px " src=<%=data.imageurl %> alt=" ">
+                        </div>
+                        <div class="content ">
+                            <h3>
+                                <%=data.name%>
+                            </h3>
+
+                            <div class="costcontainer ">
+                                <div class="piece ">
+                                    <p style="font-weight: bold; ">Total piece: </p>
+                                    <p>
+                                        <%=data.peice%>
+                                    </p>
+                                </div>
+                                <div class="cost2 ">
+                                    <p style="font-weight: bold; "> Cost: </p>
+                                    <p>
+                                        <%=data.cost%>₹
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="icons ">
+                            <button class="edit" onclick=location.href="/whislistupdate/<%=data.id%>/<%=data.oldid%>/<%=name%>"><i class="fas fa-edit "></i></button>
+                            <button class="delete" onclick="deleteitem( '<%=data.id%>') "><i class="fas fa-trash-alt "></i></button>
+
+                        </div>
+
+                    </div>
+
+                    <% })}%>
+
+            </div>
+
+            <div class="container" style="position: fixed;
+            top: 590px;
+            left: 1250px;" onclick="myorders()">
+                <div class="fixed-action-bt">
+                    <a class="btn-floating red">
+                        <i style="font-size: 25px; color: white;" class="fas fa-shopping-bag"></i>
+                    </a>
+
+                </div>
+
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+            <script src="/js/wishlist.js "></script>
+
+</body>
+
+</html>
